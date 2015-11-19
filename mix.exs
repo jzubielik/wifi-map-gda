@@ -19,7 +19,8 @@ defmodule WifiMapGda.Mixfile do
   def application do
     [mod: {WifiMapGda, []},
      applications: [:phoenix, :phoenix_html, :cowboy, :logger,
-                    :phoenix_ecto, :postgrex]]
+                    :phoenix_ecto, :postgrex, :httpotion,
+                    :csvlixir, :codepagex]]
   end
 
   # Specifies which paths to compile per environment.
@@ -35,7 +36,11 @@ defmodule WifiMapGda.Mixfile do
      {:postgrex, ">= 0.0.0"},
      {:phoenix_html, "~> 2.1"},
      {:phoenix_live_reload, "~> 1.0", only: :dev},
-     {:cowboy, "~> 1.0"}]
+     {:cowboy, "~> 1.0"},
+     {:csvlixir, github: "jimm/csvlixir"},
+     {:codepagex, github: "tallakt/codepagex", tag: "v0.1.2"},
+     {:ibrowse, github: "cmullaparthi/ibrowse", tag: "v4.1.2"},
+     {:httpotion, "~> 2.1.0"}]
   end
 
   # Aliases are shortcut or tasks specific to the current project.

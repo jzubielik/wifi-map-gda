@@ -27,3 +27,11 @@ import_config "#{Mix.env}.exs"
 config :phoenix, :generators,
   migration: true,
   binary_id: false
+
+config :codepagex, :encodings, [
+    :ascii,           # by alias name
+    ~r[iso8859]i,     # by a regex matching the full name
+    ~r[cp]i,          # by a regex matching the full name
+    "ETSI/GSM0338",   # by the full name as a string
+    :"MISC/CP1250"     # by a full name as an atom
+  ]
